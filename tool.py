@@ -54,7 +54,7 @@ def restart_bot():
 async def ensure_reconnect():
     while True:
         try:
-            await client.start(MTIyNzk3NTY0NDA4NDk2NTQyNg.Gu0Ugc.qUuePV_pFQpN-ExclppUAhjhb3Iur86zhifL8Q)
+            await client.start(MTIyNzk3NTY0NDA4NDk2NTQyNg.GrinVl.5a1dJYILlIc4qaA2c6NbVLsJMigNeBSK_PFD5w)
         except Exception as e:
             logger.error(f"Đã xảy ra lỗi: {e}")
             await send_alert(f"❌ Đã xảy ra lỗi nghiêm trọng: {e}")
