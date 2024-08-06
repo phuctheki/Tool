@@ -4,10 +4,6 @@ import logging
 import asyncio
 import psutil
 import os
-import tracemalloc
-
-# Bật tracemalloc để theo dõi phân bổ bộ nhớ
-tracemalloc.start()
 
 # Cập nhật base_url để trỏ đến https://api.hakai.shop:8080
 openai.api_key = "sk-kaCSlJhHziGwKdVN3bA0306eCd27448dBa583a40FdFcE901"
@@ -22,7 +18,7 @@ logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(levelname)s - %(
 logger = logging.getLogger()
 
 # Cấu hình cảnh báo
-alert_channel_id = 1223322123123  # Thay thế bằng ID của kênh cảnh báo
+alert_channel_id = 1270001129643708529  # Thay thế bằng ID của kênh cảnh báo
 
 async def send_alert(message):
     channel = client.get_channel(alert_channel_id)
@@ -54,7 +50,7 @@ def restart_bot():
 async def ensure_reconnect():
     while True:
         try:
-            await client.start(MTIyNzk3NTY0NDA4NDk2NTQyNg.GrinVl.5a1dJYILlIc4qaA2c6NbVLsJMigNeBSK_PFD5w)
+            await client.start("MTIyNzk3NTY0NDA4NDk2NTQyNg.GrinVl.5a1dJYILlIc4qaA2c6NbVLsJMigNeBSK_PFD5w")
         except Exception as e:
             logger.error(f"Đã xảy ra lỗi: {e}")
             await send_alert(f"❌ Đã xảy ra lỗi nghiêm trọng: {e}")
@@ -111,4 +107,3 @@ if __name__ == "__main__":
     logger.info("Đang khởi động bot...")
     asyncio.get_event_loop().create_task(monitor_system())
     asyncio.run(ensure_reconnect())
-d
